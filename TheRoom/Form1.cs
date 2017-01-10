@@ -14,6 +14,8 @@ namespace TheRoom
     public partial class Form1 : Form
     {
 
+        String servidor1 = "Servidor";
+        String servidor2 = "Servidor";
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -26,16 +28,23 @@ namespace TheRoom
         private void Form1_Load(object sender, EventArgs e)
         {
             axWindowsMediaPlayer2.URL = "http://giss.tv:8000/TheRoomMusic.mp3";
+            servidor1 = "Servidor1";
+            label4.Text = servidor1;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer2.URL = "http://giss.tv:8000/TheRoomMusic.mp3";
+            servidor1 = "Servidor1";
+            label4.Text = servidor1;
+            label3.BackColor = Color.Red;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer2.Ctlcontrols.stop();
+            label3.BackColor = Color.Gray;
+            label4.Text = "";
         }
 
 
@@ -64,11 +73,17 @@ namespace TheRoom
         private void button3_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer2.URL = "http://giss.tv:8000/TheRoomMusic.mp3";
+            label3.BackColor = Color.Red;
+            servidor1 = "Servidor1";
+            label4.Text = servidor1;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer2.URL = "http://giss.tv:8001/TheRoomMusic.mp3";
+            label3.BackColor = Color.Red;
+            servidor2 = "Servidor2";
+            label4.Text = servidor2;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
